@@ -1,41 +1,95 @@
 <%- include("partials/header") %>
-<div class="container">
-    <div class="row">
-      <div class="col">
-          <img id="fotoPerfil" src="img/foto1.jpeg" class="card-img-top" alt="...">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Cras justo odio</li>
-              <li class="list-group-item">Dapibus ac facilisis in</li>
-              <li class="list-group-item">Vestibulum at eros</li>
-            </ul>
-            <div class="card-body">
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
-            </div>
-          </div>
-      </div>
-        <div class="col">
-            <h1>Perfil</h1>
-            <div class="card">
-                <div class="card-header">
-                  Quote
-                </div>
-                <div class="card-body">
-                  <blockquote class="blockquote mb-0">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                    <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                  </blockquote>
-                </div>
-              </div>
-          </div>
-      
-      </div>    
+
+<!-- Jumbotron -->
+<div class="jumbotron jumbotron-fluid">
+  <div id="jumboCont" class="container text-center mb-4">
+    <img id="fotoP" src="img/foto1.jpeg" alt="">
+    <h1 class="display-3">Silvio Ligas</h1>
+    <h2 >Web Developer Full Stack</h2>
+    <button type="button" class="btn btn-danger btn-lg">Descargar CV</button>
+  </div>
+  <div class="text-center">
+    <a href="">Icono Git</a>
+    <a href="">Icono Linkedin</a>
+  </div>
+</div>
+
+<!-- Container -->
+<div class="container mb-4">
+  <!-- row -->
+  <section class="row">
+
+    <div class="col-md-12">
+      <h3 class="">Sobre Mí<hr></h3>
+    
     </div>
+    <div class="col-md-6">
+      <p class="lead">
+        Mi nombre es Silvio Ligas, tengo 28 años soy de Valencia Venezuela, aunque resido en Argentina.
+        Soy trabajador independiente y me dedico al desarrollo web. Como desarrollador web, me estoy especializando para 
+        ser un desarrollador web full stack, haciendo uso de tecnologías en el desarrollo Front-End (HTML5, CSS3, Javascript, Bootstrap, Semantic UI).
+        En el Back-End tengo experiencia en Nodejs, Express, Mongodb
+      </p>
+    </div>
+    <div class="col-md-6">
+      <p class="lead">
+        Busco una oportunidad laboral en donde pueda desarrollar mis conocimientos y adquirir la experiencia necesaria.
+        Soy una persona proactiva, con capacidad de aprendizaje rápido y en contante formación.
+      </p>
+
+    </div>
+    <!-- row -->
+  </section>
+  <!-- container -->
+</div>
+
+<div class="aptitudes mb-5">
+  <div class="container">
+    <section class="row">
+      <div class="col-md-12 text-center center-block mb-5">
+        <h1 class="display-4 mb-4">Aptitudes Profesionales</h1>
+        <button class="btn btn-lg btn-primary">Conocimientos</button>
+      </div>
+      <div class="col-md-6 mb-5">
+        <h4>HTML/CSS</h4>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <h4>Javascript</h4>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <h4>Bootstrap</h4>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <h4>Semantic UI</h4>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-5">
+        <h4>Jquery</h4>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <h4>NodeJS</h4>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <h4>ExpressJS</h4>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <h4>MongoDB</h4>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+    </section>
+    <!-- Container -->
+  </div>
+</div>
 
 
 <%- include("partials/footer") %>

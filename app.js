@@ -12,10 +12,6 @@ app.get('/', function(req, res) {
 	res.render('perfil');
 });
 
-app.get('/datos', function(req, res) {
-	res.render('datos');
-});
-
 app.get('/contacto', function(req, res) {
 	res.render('contacto');
 });
