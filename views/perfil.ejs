@@ -1,16 +1,16 @@
 <%- include("partials/header") %>
 
 <!-- Jumbotron -->
-<div class="jumbotron jumbotron-fluid">
+<div class="jumbotron jumbotron-fluid pb-4">
   <div id="jumboCont" class="container text-center mb-4">
-    <img id="fotoP" src="img/foto1.jpeg" class="rounded-circle">
-    <h1 class="display-3">Silvio Ligas</h1>
-    <h2 >Web Developer Full Stack</h2>
-    <a class="btn btn-danger btn-lg" href="https://drive.google.com/open?id=1w-FNOU9gQdRzYjS5SO0jxavMunU0Y__p">Descargar CV</a>
+    <img id="fotoP" src="img/foto1.jpeg" class="rounded-circle mb-3">
+    <h1 class="display-3 mb-3">Silvio Ligas</h1>
+    <h2 class="mb-5">Web Developer Full Stack</h2>
+    <a id="btnD" class="btn btn-danger btn-lg p-2" href="https://drive.google.com/open?id=1w-FNOU9gQdRzYjS5SO0jxavMunU0Y__p">Descargar CV <i class="fas fa-download"></i></a>
   </div>
   <div class="text-center">
-    <a href="">Icono Git</a>
-    <a href="">Icono Linkedin</a>
+    <a href=""><i id="iJumb" class="fab fa-github p-2"></i></a>
+    <a href=""><i id="iJumb" class="fab fa-linkedin p-2"></i></a>
   </div>
 </div>
 
@@ -91,8 +91,8 @@
   </div>
 </div>
 
-<section class="row">
-  <div class="container">
+<div class="container">
+  <section class="row">
     <div class="col-md-12">
       <h3>Certificados</h3>
     </div>
@@ -112,7 +112,7 @@
       </div>      
     </div>
     <!-- Container -->
+  </section>
   </div>
-</section>
 
 <%- include("partials/footer") %>

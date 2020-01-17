@@ -1,11 +1,27 @@
+#navLink {
+	color: white;
+	margin: 0 2rem;
+}
+#iconNav {
+	font-size: 1.6rem;
+}
+
+#pNav {
+	margin: 0.5rem 0 0;
+	text-transform: uppercase;
+	font-weight: 625;
+}
+
+#iJumb {
+	color: white;
+	margin: 1.5rem 1rem;
+	font-size: 1.8rem;
+}
+
 .navbar {
-	background: #000000; /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #434343, #000000); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(
-		to right,
-		#434343,
-		#000000
-	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: #000000;
+	background: -webkit-linear-gradient(to right, #434343, #000000);
+	background: linear-gradient(to right, #434343, #000000);
 }
 #fotoP {
 	margin: auto;
@@ -13,20 +29,14 @@
 	padding: 0;
 }
 .jumbotron {
-	background: #000000;
-	/* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #434343, #000000); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #434343, #000000);
-	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	color: white;
+	background: #000000;
+	background: -webkit-linear-gradient(to right, #434343, #000000);
+	background: linear-gradient(to right, #434343, #000000);
 }
 .aptitudes {
-	background: #000000; /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #434343, #000000); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(
-		to right,
-		#434343,
-		#000000
-	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: #000000;
+	background: -webkit-linear-gradient(to right, #434343, #000000);
+	background: linear-gradient(to right, #434343, #000000);
 	color: white;
 }
