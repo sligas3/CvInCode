@@ -1,3 +1,4 @@
+require('dotenv').config();
 var express = require('express'),
 	app = express(),
 	bodyParser = require('body-parser'),
@@ -22,21 +23,30 @@ app.post('/contacto', function(req, res) {
 	var transporter = nodemailer.createTransport({
 		service: 'Gmail',
 		auth: {
-			user: 'sligas3arg@gmail.com',
-			pass: 'silvio_20'
+			user: process.env.EMAIL_USERNAME,
+			pass: process.env.EMAIL_PASSWORD
 		}
 	});
 	var mailOptions = {
-		from: req.body.nombre,
-		to: req.body.email,
+		from: 'Silvio',
+		to: 'sligas3@gmail.com',
 		subject: req.body.asunto,
-		text: req.body.mensaje
+		html: `
+			<div>
+				<p>${req.body.nombre}</p>
+				<p>${req.body.email}</p>
+				<p>${req.body.asunto}</p>
+				<p>${req.body.mensaje}</p>
+
+			</div>
+			`
 	};
-	transporter.sendMail(mailOptions, function(error, info) {
-		if (error) {
-			console.log(error);
+	transporter.sendMail(mailOptions, function(err, info) {
+		if (err) {
+			console.log(err);
 			res.send(500, err.message);
 		} else {
+			console.log('Email sent');
 			res.redirect('/');
 		}
 	});
