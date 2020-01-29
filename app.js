@@ -38,12 +38,17 @@ app.get('/contacto', function(req, res) {
 // NODEMAILER CONFIG
 app.post('/contacto', function(req, res) {
 	let transporter = nodemailer.createTransport({
-		service: 'Gmail',
+		host: 'smtp.gmail.com',
 		port: 465,
 		secure: true,
 		auth: {
+			type: 'OAuth2',
 			user: process.env.EMAIL_USERNAME,
-			pass: process.env.EMAIL_PASSWORD
+			clientId: process.env.GMAIL_OAUTH_CLIENT_ID,
+			clientSecret: process.env.GMAIL_OAUTH_CLIENT_SECRET,
+			refreshToken: process.env.GMAIL_OAUTH_REFRESH_TOKEN,
+			accessToken: process.env.GMAIL_OAUTH_ACCESS_TOKEN,
+			expires: Number.parseInt(process.env.GMAIL_OAUTH_TOKEN_EXPIRE, 10)
 		}
 	});
 	var mailOptions = {
@@ -73,7 +78,7 @@ app.post('/contacto', function(req, res) {
 });
 
 // SERVIDOR
-// app.listen(3000, function(req, res) {
-// 	console.log('Conectado');
-// });
-app.listen(process.env.PORT, process.env.IP);
+app.listen(3000, function(req, res) {
+	console.log('Conectado');
+});
+// app.listen(process.env.PORT, process.env.IP);
