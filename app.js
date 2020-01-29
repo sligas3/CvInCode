@@ -3,12 +3,28 @@ require('dotenv').config();
 var express = require('express'),
 	app = express(),
 	bodyParser = require('body-parser'),
-	nodemailer = require('nodemailer');
+	nodemailer = require('nodemailer'),
+	flash = require('connect-flash');
 
 // APP CONFIG
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
+
+// FLASH
+app.use(
+	require('express-session')({
+		secret: 'Nana es la perra mas bella del mundo',
+		resave: false,
+		saveUninitialized: false
+	})
+);
+app.use(flash());
+
+app.use(function(req, res, next) {
+	res.locals.message = req.flash('success');
+	next();
+});
 
 // RUTAS
 app.get('/', function(req, res) {
@@ -48,7 +64,8 @@ app.post('/contacto', function(req, res) {
 			res.send(500, err.message);
 		} else {
 			console.log('Email sent');
-			res.redirect('/');
+			req.flash('success', 'Su mensaje ha sido enviado con éxito. Muchas gracias.');
+			res.redirect('/contacto');
 		}
 	});
 });

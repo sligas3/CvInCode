@@ -1,8 +1,19 @@
 <%- include("partials/header") %>
+
+
 <header class="card-header">
     <h2>Contacto</h2>
 </header>
-        <div class="container">
+
+<% if(message && message.length > 0){ %>
+<div class="container">
+    <div class="alert alert-success col-md-8" role="alert">
+        <%= message %>
+    </div>
+</div>
+<% } %>
+
+        <div class="container mt-4">
             <div class="row">
                 <div class="col-md-12">
                     <h2>Envíame un correo</h2>
@@ -10,12 +21,12 @@
                 <div class="col-md-8">
                     <form action="/contacto" method="POST" style="width: 100%;">
                         <div class="form-group">
-                            <label for="nombre">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre">
+                            <label for="nombre">Nombre (requerido)</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email">
+                            <label for="email">Email (requerido)</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
                         </div>
                         <div class="form-group">
                             <label for="asunto">Asunto</label>
@@ -23,7 +34,7 @@
                         </div>
                         <div class="form-group">
                             <label for="mensaje">Su mensaje</label>
-                            <textarea class="form-control" name="mensaje" id="mensaje" rows="3"></textarea>
+                            <textarea class="form-control" name="mensaje" id="mensaje" rows="4"></textarea>
                         </div>
                         <button class="btn btn-lg btn-primary">Enviar mensaje</button>
                     </form>
