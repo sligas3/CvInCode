@@ -37,9 +37,12 @@ app.get('/contacto', function(req, res) {
 
 // NODEMAILER CONFIG
 app.post('/contacto', function(req, res) {
-	var transporter = nodemailer.createTransport({
-		service: 'Gmail',
+	let transporter = nodemailer.createTransport({
+		host: 'smtp.gmail.com',
+		port: 465,
+		secure: true,
 		auth: {
+			type: 'OAuth2',
 			user: process.env.EMAIL_USERNAME,
 			pass: process.env.EMAIL_PASSWORD
 		}
