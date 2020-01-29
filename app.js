@@ -71,6 +71,7 @@ app.post('/contacto', function(req, res) {
 });
 
 // SERVIDOR
-app.listen(3000, function(req, res) {
-	console.log('Conectado');
-});
+// app.listen(3000, function(req, res) {
+// 	console.log('Conectado');
+// });
+app.listen(process.env.PORT, process.env.IP);
