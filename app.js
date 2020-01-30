@@ -52,6 +52,7 @@ app.post('/contacto', function(req, res) {
 		}
 	});
 	var mailOptions = {
+		from: req.body.nombre + '<' + req.body.email + '>',
 		to: process.env.EMAIL_RECIEVER,
 		subject: req.body.asunto,
 		html: `
