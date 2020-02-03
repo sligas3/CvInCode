@@ -53,7 +53,7 @@ app.post('/contacto', function(req, res) {
 	});
 	var mailOptions = {
 		from: req.body.nombre + '<' + req.body.email + '>',
-		to: 'sligas3@gmail.com',
+		to: process.env.EMAIL_RECIEVER,
 		subject: req.body.asunto,
 		html: `
 			<div>
@@ -77,7 +77,7 @@ app.post('/contacto', function(req, res) {
 	});
 });
 
-// SERVIDOR
+// SERVIDOR;
 // app.listen(3000, function(req, res) {
 // 	console.log('Conectado');
 // });
