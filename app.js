@@ -37,17 +37,28 @@ app.get('/contacto', function(req, res) {
 
 // NODEMAILER CONFIG
 app.post('/contacto', function(req, res) {
+	var GMAIL_USER = process.env.EMAIL_USERNAME,
+		CLIENT_ID = process.env.GMAIL_OAUTH_CLIENT_ID,
+		CLIENT_SECRET = process.env.GMAIL_OAUTH_CLIENT_SECRET,
+		REFRESH_TOKEN = process.env.GMAIL_OAUTH_REFRESH_TOKEN,
+		ACCESS_TOKEN = process.env.GMAIL_OAUTH_ACCESS_TOKEN;
 	let transporter = nodemailer.createTransport({
-		host: 'smtp.mailtrap.io',
-		port: 2525,
+		host: 'smtp.gmail.com',
+		port: 465,
+		secure: true,
 		auth: {
-			user: process.env.EMAIL_USERNAME,
-			pass: process.env.EMAIL_PASSWORD
+			type: 'OAuth2',
+			user: GMAIL_USER,
+			clientId: CLIENT_ID,
+			clientSecret: CLIENT_SECRET,
+			refreshToken: REFRESH_TOKEN,
+			accessToken: ACCESS_TOKEN,
+			expires: Number.parseInt(process.env.GMAIL_OAUTH_TOKEN_EXPIRE, 10)
 		}
 	});
 	var mailOptions = {
-		from: 'CV',
-		to: process.env.EMAIL_USERNAME,
+		from: 'from',
+		to: GMAIL_USER,
 		subject: req.body.asunto,
 		html: `
 			<div>
@@ -73,6 +84,6 @@ app.post('/contacto', function(req, res) {
 
 // SERVIDOR;
 // app.listen(3000, function(req, res) {
-// 	console.log('Conectado');
+// console.log('Conectado');
 // });
 app.listen(process.env.PORT, process.env.IP);
