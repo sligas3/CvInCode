@@ -53,7 +53,7 @@ app.post('/contacto', function(req, res) {
 	});
 	var mailOptions = {
 		from: 'from',
-		to: GMAIL_USER,
+		to: process.env.EMAIL_USERNAME,
 		subject: req.body.asunto,
 		html: `
 			<div>
@@ -78,7 +78,7 @@ app.post('/contacto', function(req, res) {
 });
 
 // SERVIDOR;
-// app.listen(3000, function(req, res) {
-// console.log('Conectado');
-// });
-app.listen(process.env.PORT, process.env.IP);
+app.listen(3000, function(req, res) {
+	console.log('Conectado');
+});
+// app.listen(process.env.PORT, process.env.IP);
