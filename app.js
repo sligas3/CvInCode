@@ -62,7 +62,7 @@ app.post('/contacto', function(req, res) {
 	transporter.sendMail(mailOptions, function(err, info) {
 		if (err) {
 			console.log(err);
-			res.send(500, err.message);
+			res.status(500).send(err.message);
 		} else {
 			console.log('Email sent');
 			req.flash('success', 'Su mensaje ha sido enviado con éxito. Muchas gracias.');
