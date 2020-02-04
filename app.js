@@ -78,4 +78,7 @@ app.post('/contacto', function(req, res) {
 });
 
 // SERVIDOR;
-app.listen(process.env.PORT, process.env.IP);
+app.listen(process.env.PORT, function() {
+	console.log('Conectado');
+	return process.env.IP ? process.env.IP : null;
+});
