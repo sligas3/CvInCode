@@ -80,6 +80,4 @@ app.post('/contacto', function(req, res) {
 // SERVIDOR;
 app.listen(process.env.PORT, function() {
 	console.log('Conectado');
-	console.log(process.env.IP);
-	return process.env.IP ? process.env.IP : null;
 });
