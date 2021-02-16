@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-var express = require('express'),
+let express = require('express'),
 	app = express(),
 	bodyParser = require('body-parser'),
 	nodemailer = require('nodemailer'),
@@ -21,22 +21,22 @@ app.use(
 );
 app.use(flash());
 
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
 	res.locals.message = req.flash('success');
 	next();
 });
 
 // RUTAS
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
 	res.render('perfil');
 });
 
-app.get('/contacto', function(req, res) {
+app.get('/contacto', (req, res) => {
 	res.render('contacto');
 });
 
 // NODEMAILER CONFIG
-app.post('/contacto', function(req, res) {
+app.post('/contacto', (req, res) => {
 	let transporter = nodemailer.createTransport({
 		host: 'smtp.gmail.com',
 		port: 465,
@@ -51,7 +51,7 @@ app.post('/contacto', function(req, res) {
 			expires: Number.parseInt(process.env.GMAIL_OAUTH_TOKEN_EXPIRE, 10)
 		}
 	});
-	var mailOptions = {
+	let mailOptions = {
 		from: 'from',
 		to: process.env.EMAIL_USERNAME,
 		subject: req.body.asunto,
@@ -65,7 +65,7 @@ app.post('/contacto', function(req, res) {
 			</div>
 			`
 	};
-	transporter.sendMail(mailOptions, function(err, info) {
+	transporter.sendMail(mailOptions, (err, info) => {
 		if (err) {
 			console.log(err);
 			res.status(500).send(err.message);
@@ -78,6 +78,6 @@ app.post('/contacto', function(req, res) {
 });
 
 // SERVIDOR;
-app.listen(process.env.PORT, function() {
+app.listen(process.env.PORT, () => {
 	console.log('Conectado');
 });
